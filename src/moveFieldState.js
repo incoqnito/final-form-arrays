@@ -17,16 +17,21 @@ function moveFieldState(
     change: oldState.fields[destKey] && oldState.fields[destKey].change,
     blur: oldState.fields[destKey] && oldState.fields[destKey].blur,
     focus: oldState.fields[destKey] && oldState.fields[destKey].focus,
+    beforeSubmit:
+      oldState.fields[destKey] && oldState.fields[destKey].beforeSubmit,
     lastFieldState: undefined // clearing lastFieldState forces renotification
   }
   if (!state.fields[destKey].change) {
-    delete state.fields[destKey].change;
+    delete state.fields[destKey].change
   }
   if (!state.fields[destKey].blur) {
-    delete state.fields[destKey].blur;
+    delete state.fields[destKey].blur
   }
   if (!state.fields[destKey].focus) {
-    delete state.fields[destKey].focus;
+    delete state.fields[destKey].focus
+  }
+  if (!state.fields[destKey].beforeSubmit) {
+    delete state.fields[destKey].beforeSubmit
   }
 }
 
